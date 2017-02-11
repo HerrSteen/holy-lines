@@ -1,6 +1,6 @@
 {
   "name": "holy-lines",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Count the lines current directory",
   "main": "index.js",
   "scripts": {
@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/HerrSteen/holy-lines/issues"
   },
-  "homepage": "https://github.com/HerrSteen/holy-lines#readme"
+  "preferGlobal": true,
+  "bin": {
+    "holy-lines": "index.js"
+  },
+  "homepage": "https://github.com/HerrSteen/holy-lines#readme",
+  "devDependencies": {}
 }

@@ -1,10 +1,11 @@
 
-function getSettings(cmds) {
+function getSettings(process) {
   const s = {
-    verbose: false
+    verbose: false,
+    path: process.env.PWD
   };
-  
-  cmds.forEach((cmd) => {
+
+  process.argv.forEach((cmd) => {
     if (cmd === "-v") {
       s.verbose = true;
     }
