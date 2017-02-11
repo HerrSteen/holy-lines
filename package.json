@@ -1,0 +1,11 @@
+{
+  "name": "Heliga Linjer",
+  "main": ".",
+  "version": "0.0.1",
+  "description": "Count lines in project",
+  "keywords": [],
+  "activationCommands": {},
+  "dependencies": {},
+  "devDependencies": {
+  }
+}
