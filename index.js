@@ -2,11 +2,11 @@
 "use strict";
 
 const fs = require("fs");
+const path = require('path');
 const getSettings = require("./settings");
 
 const settings = getSettings(process);
 const list = getCatalog(process.env.PWD);
-console.log("process.env.PWD", settings.path);
 
 while(list.folders.length) {
   list.folders.forEach((folder, index) => {
@@ -18,7 +18,7 @@ while(list.folders.length) {
 }
 
 const files = list.files;
-console.log("Holy lines: ", countLines(files, settings));
+console.log(`Holy lines: ${countLines(files, settings)}`);
 
 function countLines(files, settings) {
   let lineCount = 0;
@@ -58,12 +58,21 @@ function getCatalog(dir) {
 
 function printLine(file, lineCount, path) {
   const n = file.substr(path.length+1);
-  console.log(`${n} : ${lineCount}`);
-
-
+  console.log(`${n}: ${lineCount}`);
 }
 
 function passFilter(file) {
   if (file.indexOf(".") === 0) return false;
+  if (file.indexOf("node_modules") === 0) return false;
+
+  const fe = path.extname(file);
+  if (fe === "") return true;
+
+  const filter = [".jpg", ".jpeg", ".png", ".gif"];
+
+  if (filter.indexOf(fe) !== -1) {
+    return false;
+  }
+
   return true;
 }
