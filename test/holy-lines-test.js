@@ -9,7 +9,7 @@ describe("Holy Lines", () => {
     "Holy lines: 40"
   ];
 
-  it ("should log all files when -v param is set", () => {
+  it ("should log line count", () => {
     console.log  = (...args) => {
       pushedLogs.push(...args);
     };
