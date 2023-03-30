@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/HerrSteen/holy-lines#readme",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^3.2.0"
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
   }
 }
